@@ -1,0 +1,134 @@
+[
+  {
+    "id": "S01",
+    "estado": "ACREDITADA",
+    "resumen": {
+      "TRANSFERENCIA": "MIXTA",
+      "ATENCION": "SIN_EVIDENCIA",
+      "CLARIDAD": "SIN_EVIDENCIA"
+    },
+    "explicacion": "S_ENVIO, S_RECEPCION; la recepción posterior confirma el estado.",
+    "analisis": "COMPLETO"
+  },
+  {
+    "id": "S02",
+    "estado": "NO_ACREDITADA",
+    "resumen": {
+      "TRANSFERENCIA": "NEGATIVA",
+      "ATENCION": "POSITIVA",
+      "CLARIDAD": "SIN_EVIDENCIA"
+    },
+    "explicacion": "S_ATENCION y S_SIN_LLEGAR en cláusulas independientes.",
+    "analisis": "COMPLETO"
+  },
+  {
+    "id": "S03",
+    "estado": "REVERTIDA",
+    "resumen": {
+      "TRANSFERENCIA": "MIXTA",
+      "ATENCION": "SIN_EVIDENCIA",
+      "CLARIDAD": "SIN_EVIDENCIA"
+    },
+    "explicacion": "S_DEVOLUCION reemplaza la no acreditación; no implica recepción.",
+    "analisis": "COMPLETO"
+  },
+  {
+    "id": "S04",
+    "estado": "NO_CONFIRMADA",
+    "resumen": {
+      "TRANSFERENCIA": "SIN_EVIDENCIA",
+      "ATENCION": "POSITIVA",
+      "CLARIDAD": "NEGATIVA"
+    },
+    "explicacion": "Negación local S_CLARIDAD; S_OPINION independiente después de pero.",
+    "analisis": "COMPLETO"
+  },
+  {
+    "id": "S05",
+    "estado": "NO_ACREDITADA",
+    "resumen": {
+      "TRANSFERENCIA": "NEGATIVA",
+      "ATENCION": "SIN_EVIDENCIA",
+      "CLARIDAD": "SIN_EVIDENCIA"
+    },
+    "explicacion": "Corrección única de tranferencia; REF y MONTO protegidos.",
+    "analisis": "COMPLETO"
+  },
+  {
+    "id": "S06",
+    "estado": "PENDIENTE",
+    "resumen": {
+      "TRANSFERENCIA": "SIN_EVIDENCIA",
+      "ATENCION": "SIN_EVIDENCIA",
+      "CLARIDAD": "SIN_EVIDENCIA"
+    },
+    "explicacion": "S_SEGUIMIENTO no crea opinión; S_CORTESIA no confirma recepción.",
+    "analisis": "COMPLETO"
+  },
+  {
+    "id": "S07",
+    "estado": "ACREDITADA",
+    "resumen": {
+      "TRANSFERENCIA": "MIXTA",
+      "ATENCION": "SIN_EVIDENCIA",
+      "CLARIDAD": "SIN_EVIDENCIA"
+    },
+    "explicacion": "Rechaza el rol CAJERO y retoma el turno 3.",
+    "analisis": "PARCIAL"
+  },
+  {
+    "id": "S08",
+    "estado": "NO_CONFIRMADA",
+    "resumen": {
+      "TRANSFERENCIA": "SIN_EVIDENCIA",
+      "ATENCION": "SIN_EVIDENCIA",
+      "CLARIDAD": "SIN_EVIDENCIA"
+    },
+    "explicacion": "Empate paga/pago: abstenerse y marcar NO_INTERPRETADOS.",
+    "analisis": "PARCIAL"
+  },
+  {
+    "id": "S09",
+    "estado": "NO_CONFIRMADA",
+    "resumen": {
+      "TRANSFERENCIA": "SIN_EVIDENCIA",
+      "ATENCION": "NEGATIVA",
+      "CLARIDAD": "POSITIVA"
+    },
+    "explicacion": "Negación e intensidad conservadas; no atraviesan pero.",
+    "analisis": "COMPLETO"
+  },
+  {
+    "id": "S10",
+    "estado": "NO_CONFIRMADA",
+    "resumen": {
+      "TRANSFERENCIA": "POSITIVA",
+      "ATENCION": "SIN_EVIDENCIA",
+      "CLARIDAD": "SIN_EVIDENCIA"
+    },
+    "explicacion": "Regresion: debito no acredita; declaracion del AGENTE no confirma recepcion del CLIENTE.",
+    "analisis": "COMPLETO"
+  },
+  {
+    "id": "S11",
+    "estado": "NO_ACREDITADA",
+    "resumen": {
+      "TRANSFERENCIA": "NEGATIVA",
+      "ATENCION": "SIN_EVIDENCIA",
+      "CLARIDAD": "SIN_EVIDENCIA"
+    },
+    "explicacion": "Declaración explícita del cliente prevalece sobre solicitudes/promesas posteriores.",
+    "analisis": "COMPLETO"
+  },
+  {
+    "id": "S12",
+    "estado": "NO_CONFIRMADA",
+    "resumen": {
+      "TRANSFERENCIA": "POSITIVA",
+      "ATENCION": "SIN_EVIDENCIA",
+      "CLARIDAD": "SIN_EVIDENCIA"
+    },
+    "explicacion": "Recuperación por cláusula: conserva la opinión válida.",
+    "analisis": "PARCIAL"
+  }
+]

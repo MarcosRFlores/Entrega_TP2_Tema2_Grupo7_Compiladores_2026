@@ -1,0 +1,210 @@
+{
+  "transferencia": {
+    "categoria": "TRANSFERENCIA",
+    "canonico": "TRANSFERENCIA"
+  },
+  "atencion": {
+    "categoria": "ATENCION",
+    "canonico": "ATENCION"
+  },
+  "claridad": {
+    "categoria": "CLARIDAD",
+    "canonico": "CLARIDAD"
+  },
+  "explicacion": {
+    "categoria": "CLARIDAD",
+    "canonico": "CLARIDAD"
+  },
+  "la": {
+    "categoria": "ARTICULO",
+    "canonico": "la"
+  },
+  "el": {
+    "categoria": "ARTICULO",
+    "canonico": "el"
+  },
+  "me": {
+    "categoria": "PRONOMBRE",
+    "canonico": "me"
+  },
+  "no": {
+    "categoria": "NO",
+    "canonico": "no"
+  },
+  "muy": {
+    "categoria": "MUY",
+    "canonico": "muy"
+  },
+  "pero": {
+    "categoria": "PERO",
+    "canonico": "pero"
+  },
+  "de": {
+    "categoria": "DE",
+    "canonico": "de"
+  },
+  "sin": {
+    "categoria": "SIN",
+    "canonico": "sin"
+  },
+  "ahora": {
+    "categoria": "TIEMPO",
+    "canonico": "ahora"
+  },
+  "ya": {
+    "categoria": "TIEMPO",
+    "canonico": "ya"
+  },
+  "aun": {
+    "categoria": "TIEMPO",
+    "canonico": "aun"
+  },
+  "todavia": {
+    "categoria": "TIEMPO",
+    "canonico": "todavia"
+  },
+  "manana": {
+    "categoria": "TIEMPO",
+    "canonico": "manana"
+  },
+  "si": {
+    "categoria": "AFIRMACION",
+    "canonico": "si"
+  },
+  "agente": {
+    "categoria": "AGENTE",
+    "canonico": "agente"
+  },
+  "destinatario": {
+    "categoria": "DESTINATARIO",
+    "canonico": "destinatario"
+  },
+  "envie": {
+    "categoria": "ENVIO",
+    "canonico": "envie"
+  },
+  "debitaron": {
+    "categoria": "ENVIO",
+    "canonico": "debitaron"
+  },
+  "recibio": {
+    "categoria": "RECEPCION",
+    "canonico": "recibio"
+  },
+  "llego": {
+    "categoria": "RECEPCION",
+    "canonico": "llego"
+  },
+  "devolvieron": {
+    "categoria": "DEVOLUCION",
+    "canonico": "devolvieron"
+  },
+  "revisaremos": {
+    "categoria": "SEGUIMIENTO",
+    "canonico": "revisaremos"
+  },
+  "registre": {
+    "categoria": "SEGUIMIENTO",
+    "canonico": "registre"
+  },
+  "solicitamos": {
+    "categoria": "SOLICITUD",
+    "canonico": "solicitamos"
+  },
+  "atendiste": {
+    "categoria": "ATENDER",
+    "canonico": "atendiste"
+  },
+  "entendi": {
+    "categoria": "ENTENDER",
+    "canonico": "entendi"
+  },
+  "es": {
+    "categoria": "COPULA",
+    "canonico": "es"
+  },
+  "fue": {
+    "categoria": "COPULA",
+    "canonico": "fue"
+  },
+  "sigue": {
+    "categoria": "CONTINUA",
+    "canonico": "sigue"
+  },
+  "llegar": {
+    "categoria": "LLEGAR",
+    "canonico": "llegar"
+  },
+  "bien": {
+    "categoria": "POSITIVO",
+    "canonico": "bien"
+  },
+  "buena": {
+    "categoria": "POSITIVO",
+    "canonico": "buena"
+  },
+  "bueno": {
+    "categoria": "POSITIVO",
+    "canonico": "bueno"
+  },
+  "amable": {
+    "categoria": "POSITIVO",
+    "canonico": "amable"
+  },
+  "clara": {
+    "categoria": "POSITIVO",
+    "canonico": "clara"
+  },
+  "claro": {
+    "categoria": "POSITIVO",
+    "canonico": "claro"
+  },
+  "mal": {
+    "categoria": "NEGATIVO",
+    "canonico": "mal"
+  },
+  "mala": {
+    "categoria": "NEGATIVO",
+    "canonico": "mala"
+  },
+  "malo": {
+    "categoria": "NEGATIVO",
+    "canonico": "malo"
+  },
+  "confusa": {
+    "categoria": "NEGATIVO",
+    "canonico": "confusa"
+  },
+  "confuso": {
+    "categoria": "NEGATIVO",
+    "canonico": "confuso"
+  },
+  "dinero": {
+    "categoria": "OBJETO",
+    "canonico": "dinero"
+  },
+  "importe": {
+    "categoria": "OBJETO",
+    "canonico": "importe"
+  },
+  "reversion": {
+    "categoria": "REVERSION",
+    "canonico": "reversion"
+  },
+  "reclamo": {
+    "categoria": "RECLAMO",
+    "canonico": "reclamo"
+  },
+  "gracias": {
+    "categoria": "AGRADECIMIENTO",
+    "canonico": "gracias"
+  },
+  "paga": {
+    "categoria": "PAGO",
+    "canonico": "paga"
+  },
+  "pago": {
+    "categoria": "PAGO",
+    "canonico": "pago"
+  }
+}

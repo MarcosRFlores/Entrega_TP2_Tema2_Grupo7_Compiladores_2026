@@ -1,0 +1,828 @@
+TRAZA S05: original -> tokens -> estructura -> simbolos -> semantica -> resultado
+
+ORIGINAL
+"La tranferencia TR-204 de G. 250000 no llegó."
+
+TOKENS
+[
+  {
+    "categoria": "ARTICULO",
+    "original": "La",
+    "normalizado": "la",
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 0,
+    "fin": 2,
+    "recorrido_afd": null
+  },
+  {
+    "categoria": "TRANSFERENCIA",
+    "original": "tranferencia",
+    "normalizado": "TRANSFERENCIA",
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 3,
+    "fin": 15,
+    "recorrido_afd": null
+  },
+  {
+    "categoria": "REF",
+    "original": "TR-204",
+    "normalizado": "TR-204",
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 16,
+    "fin": 22,
+    "recorrido_afd": [
+      "m0",
+      "m3",
+      "m4",
+      "m5",
+      "m6",
+      "m7",
+      "m8"
+    ]
+  },
+  {
+    "categoria": "DE",
+    "original": "de",
+    "normalizado": "de",
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 23,
+    "fin": 25,
+    "recorrido_afd": null
+  },
+  {
+    "categoria": "MONTO",
+    "original": "G. 250000",
+    "normalizado": "250000",
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 26,
+    "fin": 35,
+    "recorrido_afd": null
+  },
+  {
+    "categoria": "NO",
+    "original": "no",
+    "normalizado": "no",
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 36,
+    "fin": 38,
+    "recorrido_afd": null
+  },
+  {
+    "categoria": "RECEPCION",
+    "original": "llegó",
+    "normalizado": "llego",
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 39,
+    "fin": 44,
+    "recorrido_afd": null
+  },
+  {
+    "categoria": "PUNT",
+    "original": ".",
+    "normalizado": ".",
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 44,
+    "fin": 45,
+    "recorrido_afd": null
+  }
+]
+
+ESTRUCTURA Y DERIVACION
+[
+  {
+    "enlace": "INICIO",
+    "inicio": 0,
+    "fin": 44,
+    "texto": "La tranferencia TR-204 de G. 250000 no llegó",
+    "estructura": {
+      "produccion": "S_RECEPCION",
+      "sujeto": {
+        "categoria": "TRANSFERENCIA",
+        "original": "tranferencia",
+        "normalizado": "TRANSFERENCIA",
+        "sesion": "S05",
+        "turno": 1,
+        "inicio": 3,
+        "fin": 15,
+        "recorrido_afd": null
+      },
+      "verbo": "llego",
+      "negada": true,
+      "intensidad": "NORMAL",
+      "aspecto": "TRANSFERENCIA",
+      "valoracion": "NEGATIVA",
+      "evento": "NO_ACREDITADA",
+      "arbol": {
+        "simbolo": "<clausula>",
+        "hijos": [
+          {
+            "simbolo": "<contexto>",
+            "hijos": [],
+            "produccion": "<contexto> ::= ε"
+          },
+          {
+            "simbolo": "<inicio>",
+            "hijos": [
+              {
+                "simbolo": "<sujeto>",
+                "hijos": [
+                  {
+                    "simbolo": "ARTICULO",
+                    "hijos": [],
+                    "token": {
+                      "categoria": "ARTICULO",
+                      "original": "La",
+                      "normalizado": "la",
+                      "sesion": "S05",
+                      "turno": 1,
+                      "inicio": 0,
+                      "fin": 2,
+                      "recorrido_afd": null
+                    }
+                  },
+                  {
+                    "simbolo": "<nucleo>",
+                    "hijos": [
+                      {
+                        "simbolo": "TRANSFERENCIA",
+                        "hijos": [],
+                        "token": {
+                          "categoria": "TRANSFERENCIA",
+                          "original": "tranferencia",
+                          "normalizado": "TRANSFERENCIA",
+                          "sesion": "S05",
+                          "turno": 1,
+                          "inicio": 3,
+                          "fin": 15,
+                          "recorrido_afd": null
+                        }
+                      },
+                      {
+                        "simbolo": "<datos>",
+                        "hijos": [
+                          {
+                            "simbolo": "REF",
+                            "hijos": [],
+                            "token": {
+                              "categoria": "REF",
+                              "original": "TR-204",
+                              "normalizado": "TR-204",
+                              "sesion": "S05",
+                              "turno": 1,
+                              "inicio": 16,
+                              "fin": 22,
+                              "recorrido_afd": [
+                                "m0",
+                                "m3",
+                                "m4",
+                                "m5",
+                                "m6",
+                                "m7",
+                                "m8"
+                              ]
+                            }
+                          },
+                          {
+                            "simbolo": "<monto-opt>",
+                            "hijos": [
+                              {
+                                "simbolo": "DE",
+                                "hijos": [],
+                                "token": {
+                                  "categoria": "DE",
+                                  "original": "de",
+                                  "normalizado": "de",
+                                  "sesion": "S05",
+                                  "turno": 1,
+                                  "inicio": 23,
+                                  "fin": 25,
+                                  "recorrido_afd": null
+                                }
+                              },
+                              {
+                                "simbolo": "MONTO",
+                                "hijos": [],
+                                "token": {
+                                  "categoria": "MONTO",
+                                  "original": "G. 250000",
+                                  "normalizado": "250000",
+                                  "sesion": "S05",
+                                  "turno": 1,
+                                  "inicio": 26,
+                                  "fin": 35,
+                                  "recorrido_afd": null
+                                }
+                              }
+                            ],
+                            "produccion": "<monto-opt> ::= DE MONTO"
+                          }
+                        ],
+                        "produccion": "<datos> ::= REF <monto-opt>"
+                      }
+                    ],
+                    "produccion": "<nucleo> ::= TRANSFERENCIA <datos>"
+                  }
+                ],
+                "produccion": "<sujeto> ::= ARTICULO <nucleo>"
+              },
+              {
+                "simbolo": "<contexto>",
+                "hijos": [],
+                "produccion": "<contexto> ::= ε"
+              },
+              {
+                "simbolo": "<predicado>",
+                "hijos": [
+                  {
+                    "simbolo": "<prefijo>",
+                    "hijos": [
+                      {
+                        "simbolo": "NO",
+                        "hijos": [],
+                        "token": {
+                          "categoria": "NO",
+                          "original": "no",
+                          "normalizado": "no",
+                          "sesion": "S05",
+                          "turno": 1,
+                          "inicio": 36,
+                          "fin": 38,
+                          "recorrido_afd": null
+                        }
+                      },
+                      {
+                        "simbolo": "<pron-opt>",
+                        "hijos": [],
+                        "produccion": "<pron-opt> ::= ε"
+                      }
+                    ],
+                    "produccion": "<prefijo> ::= NO <pron-opt>"
+                  },
+                  {
+                    "simbolo": "<cuerpo>",
+                    "hijos": [
+                      {
+                        "simbolo": "RECEPCION",
+                        "hijos": [],
+                        "token": {
+                          "categoria": "RECEPCION",
+                          "original": "llegó",
+                          "normalizado": "llego",
+                          "sesion": "S05",
+                          "turno": 1,
+                          "inicio": 39,
+                          "fin": 44,
+                          "recorrido_afd": null
+                        }
+                      }
+                    ],
+                    "produccion": "<cuerpo> ::= RECEPCION"
+                  },
+                  {
+                    "simbolo": "<complementos>",
+                    "hijos": [],
+                    "produccion": "<complementos> ::= ε"
+                  }
+                ],
+                "produccion": "<predicado> ::= <prefijo> <cuerpo> <complementos>"
+              }
+            ],
+            "produccion": "<inicio> ::= <sujeto> <contexto> <predicado>"
+          }
+        ],
+        "produccion": "<clausula> ::= <contexto> <inicio>",
+        "atributos": {
+          "produccion": "S_RECEPCION",
+          "sujeto": {
+            "categoria": "TRANSFERENCIA",
+            "original": "tranferencia",
+            "normalizado": "TRANSFERENCIA",
+            "sesion": "S05",
+            "turno": 1,
+            "inicio": 3,
+            "fin": 15,
+            "recorrido_afd": null
+          },
+          "verbo": "llego",
+          "negada": true,
+          "intensidad": "NORMAL",
+          "aspecto": "TRANSFERENCIA",
+          "valoracion": "NEGATIVA",
+          "evento": "NO_ACREDITADA"
+        }
+      },
+      "derivacion": [
+        {
+          "indice": 0,
+          "preanalisis": "ARTICULO",
+          "pila": [
+            "$",
+            "<clausula>"
+          ],
+          "accion": "EXPANDIR",
+          "produccion": "<clausula> ::= <contexto> <inicio>"
+        },
+        {
+          "indice": 0,
+          "preanalisis": "ARTICULO",
+          "pila": [
+            "$",
+            "<inicio>",
+            "<contexto>"
+          ],
+          "accion": "EXPANDIR",
+          "produccion": "<contexto> ::= ε"
+        },
+        {
+          "indice": 0,
+          "preanalisis": "ARTICULO",
+          "pila": [
+            "$",
+            "<inicio>"
+          ],
+          "accion": "EXPANDIR",
+          "produccion": "<inicio> ::= <sujeto> <contexto> <predicado>"
+        },
+        {
+          "indice": 0,
+          "preanalisis": "ARTICULO",
+          "pila": [
+            "$",
+            "<predicado>",
+            "<contexto>",
+            "<sujeto>"
+          ],
+          "accion": "EXPANDIR",
+          "produccion": "<sujeto> ::= ARTICULO <nucleo>"
+        },
+        {
+          "indice": 0,
+          "preanalisis": "ARTICULO",
+          "pila": [
+            "$",
+            "<predicado>",
+            "<contexto>",
+            "<nucleo>",
+            "ARTICULO"
+          ],
+          "accion": "MATCH",
+          "simbolo": "ARTICULO"
+        },
+        {
+          "indice": 1,
+          "preanalisis": "TRANSFERENCIA",
+          "pila": [
+            "$",
+            "<predicado>",
+            "<contexto>",
+            "<nucleo>"
+          ],
+          "accion": "EXPANDIR",
+          "produccion": "<nucleo> ::= TRANSFERENCIA <datos>"
+        },
+        {
+          "indice": 1,
+          "preanalisis": "TRANSFERENCIA",
+          "pila": [
+            "$",
+            "<predicado>",
+            "<contexto>",
+            "<datos>",
+            "TRANSFERENCIA"
+          ],
+          "accion": "MATCH",
+          "simbolo": "TRANSFERENCIA"
+        },
+        {
+          "indice": 2,
+          "preanalisis": "REF",
+          "pila": [
+            "$",
+            "<predicado>",
+            "<contexto>",
+            "<datos>"
+          ],
+          "accion": "EXPANDIR",
+          "produccion": "<datos> ::= REF <monto-opt>"
+        },
+        {
+          "indice": 2,
+          "preanalisis": "REF",
+          "pila": [
+            "$",
+            "<predicado>",
+            "<contexto>",
+            "<monto-opt>",
+            "REF"
+          ],
+          "accion": "MATCH",
+          "simbolo": "REF"
+        },
+        {
+          "indice": 3,
+          "preanalisis": "DE",
+          "pila": [
+            "$",
+            "<predicado>",
+            "<contexto>",
+            "<monto-opt>"
+          ],
+          "accion": "EXPANDIR",
+          "produccion": "<monto-opt> ::= DE MONTO"
+        },
+        {
+          "indice": 3,
+          "preanalisis": "DE",
+          "pila": [
+            "$",
+            "<predicado>",
+            "<contexto>",
+            "MONTO",
+            "DE"
+          ],
+          "accion": "MATCH",
+          "simbolo": "DE"
+        },
+        {
+          "indice": 4,
+          "preanalisis": "MONTO",
+          "pila": [
+            "$",
+            "<predicado>",
+            "<contexto>",
+            "MONTO"
+          ],
+          "accion": "MATCH",
+          "simbolo": "MONTO"
+        },
+        {
+          "indice": 5,
+          "preanalisis": "NO",
+          "pila": [
+            "$",
+            "<predicado>",
+            "<contexto>"
+          ],
+          "accion": "EXPANDIR",
+          "produccion": "<contexto> ::= ε"
+        },
+        {
+          "indice": 5,
+          "preanalisis": "NO",
+          "pila": [
+            "$",
+            "<predicado>"
+          ],
+          "accion": "EXPANDIR",
+          "produccion": "<predicado> ::= <prefijo> <cuerpo> <complementos>"
+        },
+        {
+          "indice": 5,
+          "preanalisis": "NO",
+          "pila": [
+            "$",
+            "<complementos>",
+            "<cuerpo>",
+            "<prefijo>"
+          ],
+          "accion": "EXPANDIR",
+          "produccion": "<prefijo> ::= NO <pron-opt>"
+        },
+        {
+          "indice": 5,
+          "preanalisis": "NO",
+          "pila": [
+            "$",
+            "<complementos>",
+            "<cuerpo>",
+            "<pron-opt>",
+            "NO"
+          ],
+          "accion": "MATCH",
+          "simbolo": "NO"
+        },
+        {
+          "indice": 6,
+          "preanalisis": "RECEPCION",
+          "pila": [
+            "$",
+            "<complementos>",
+            "<cuerpo>",
+            "<pron-opt>"
+          ],
+          "accion": "EXPANDIR",
+          "produccion": "<pron-opt> ::= ε"
+        },
+        {
+          "indice": 6,
+          "preanalisis": "RECEPCION",
+          "pila": [
+            "$",
+            "<complementos>",
+            "<cuerpo>"
+          ],
+          "accion": "EXPANDIR",
+          "produccion": "<cuerpo> ::= RECEPCION"
+        },
+        {
+          "indice": 6,
+          "preanalisis": "RECEPCION",
+          "pila": [
+            "$",
+            "<complementos>",
+            "RECEPCION"
+          ],
+          "accion": "MATCH",
+          "simbolo": "RECEPCION"
+        },
+        {
+          "indice": 7,
+          "preanalisis": "$",
+          "pila": [
+            "$",
+            "<complementos>"
+          ],
+          "accion": "EXPANDIR",
+          "produccion": "<complementos> ::= ε"
+        },
+        {
+          "indice": 7,
+          "preanalisis": "$",
+          "pila": [
+            "$"
+          ],
+          "accion": "ACEPTAR",
+          "simbolo": "$"
+        }
+      ]
+    }
+  }
+]
+
+TABLA LEXICA (JSON / CONSULTA / APRENDIZAJE)
+[
+  {
+    "operacion": "BUSCAR",
+    "lexema": "la",
+    "token": "ARTICULO",
+    "encontrada": true,
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 0,
+    "fin": 2
+  },
+  {
+    "operacion": "ACTUALIZAR",
+    "lexema": "la",
+    "token": "ARTICULO",
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 0,
+    "fin": 2
+  },
+  {
+    "operacion": "BUSCAR",
+    "lexema": "tranferencia",
+    "token": null,
+    "encontrada": false,
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 3,
+    "fin": 15
+  },
+  {
+    "operacion": "BUSCAR",
+    "lexema": "transferencia",
+    "token": "TRANSFERENCIA",
+    "encontrada": true,
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 3,
+    "fin": 15
+  },
+  {
+    "operacion": "ACTUALIZAR",
+    "lexema": "transferencia",
+    "token": "TRANSFERENCIA",
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 3,
+    "fin": 15
+  },
+  {
+    "operacion": "BUSCAR",
+    "lexema": "tr-204",
+    "token": null,
+    "encontrada": false,
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 16,
+    "fin": 22
+  },
+  {
+    "operacion": "INSERTAR",
+    "lexema": "tr-204",
+    "token": "REF",
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 16,
+    "fin": 22
+  },
+  {
+    "operacion": "BUSCAR",
+    "lexema": "de",
+    "token": "DE",
+    "encontrada": true,
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 23,
+    "fin": 25
+  },
+  {
+    "operacion": "ACTUALIZAR",
+    "lexema": "de",
+    "token": "DE",
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 23,
+    "fin": 25
+  },
+  {
+    "operacion": "BUSCAR",
+    "lexema": "g. 250000",
+    "token": "MONTO",
+    "encontrada": true,
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 26,
+    "fin": 35
+  },
+  {
+    "operacion": "ACTUALIZAR",
+    "lexema": "g. 250000",
+    "token": "MONTO",
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 26,
+    "fin": 35
+  },
+  {
+    "operacion": "BUSCAR",
+    "lexema": "no",
+    "token": "NO",
+    "encontrada": true,
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 36,
+    "fin": 38
+  },
+  {
+    "operacion": "ACTUALIZAR",
+    "lexema": "no",
+    "token": "NO",
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 36,
+    "fin": 38
+  },
+  {
+    "operacion": "BUSCAR",
+    "lexema": "llego",
+    "token": "RECEPCION",
+    "encontrada": true,
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 39,
+    "fin": 44
+  },
+  {
+    "operacion": "ACTUALIZAR",
+    "lexema": "llego",
+    "token": "RECEPCION",
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 39,
+    "fin": 44
+  },
+  {
+    "operacion": "BUSCAR",
+    "lexema": ".",
+    "token": "PUNT",
+    "encontrada": true,
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 44,
+    "fin": 45
+  },
+  {
+    "operacion": "ACTUALIZAR",
+    "lexema": ".",
+    "token": "PUNT",
+    "sesion": "S05",
+    "turno": 1,
+    "inicio": 44,
+    "fin": 45
+  }
+]
+
+CONSULTA / INSERCION / ACTUALIZACION
+[
+  {
+    "operacion": "BUSCAR",
+    "tipo": "PARTICIPANTE",
+    "valor": "CLIENTE",
+    "encontrada": false
+  },
+  {
+    "operacion": "INSERTAR",
+    "id": "S05:E2",
+    "turno": 1,
+    "inicio": 0
+  },
+  {
+    "operacion": "BUSCAR",
+    "tipo": "REF",
+    "valor": "TR-204",
+    "encontrada": false
+  },
+  {
+    "operacion": "INSERTAR",
+    "id": "S05:E3",
+    "turno": 1,
+    "inicio": 16
+  },
+  {
+    "operacion": "BUSCAR",
+    "tipo": "MONTO",
+    "valor": "250000",
+    "encontrada": false
+  },
+  {
+    "operacion": "INSERTAR",
+    "id": "S05:E4",
+    "turno": 1,
+    "inicio": 26
+  }
+]
+
+ACCION SEMANTICA
+[
+  {
+    "id": "S05:D1",
+    "turno": 1,
+    "actor": "CLIENTE",
+    "texto": "La tranferencia TR-204 de G. 250000 no llegó",
+    "inicio": 0,
+    "fin": 44,
+    "regla": "S_RECEPCION",
+    "producciones_sintacticas": [
+      "<clausula> ::= <contexto> <inicio>",
+      "<contexto> ::= ε",
+      "<inicio> ::= <sujeto> <contexto> <predicado>",
+      "<sujeto> ::= ARTICULO <nucleo>",
+      "<nucleo> ::= TRANSFERENCIA <datos>",
+      "<datos> ::= REF <monto-opt>",
+      "<monto-opt> ::= DE MONTO",
+      "<contexto> ::= ε",
+      "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+      "<prefijo> ::= NO <pron-opt>",
+      "<pron-opt> ::= ε",
+      "<cuerpo> ::= RECEPCION",
+      "<complementos> ::= ε"
+    ],
+    "aspecto": "TRANSFERENCIA",
+    "valoracion": "NEGATIVA",
+    "evento": "NO_ACREDITADA",
+    "negada": true,
+    "intensidad": "NORMAL"
+  }
+]
+
+RESULTADO
+{
+  "valoraciones": {
+    "TRANSFERENCIA": {
+      "valoracion": "NEGATIVA",
+      "evidencias": [
+        "S05:D1"
+      ]
+    },
+    "ATENCION": {
+      "valoracion": "SIN_EVIDENCIA",
+      "evidencias": []
+    },
+    "CLARIDAD": {
+      "valoracion": "SIN_EVIDENCIA",
+      "evidencias": []
+    }
+  },
+  "estado": "NO_ACREDITADA"
+}

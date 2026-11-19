@@ -1,0 +1,328 @@
+[
+  {
+    "id": "S01",
+    "esperado": {
+      "id": "S01",
+      "estado": "ACREDITADA",
+      "analisis": "COMPLETO",
+      "resumen": {
+        "TRANSFERENCIA": "MIXTA",
+        "ATENCION": "SIN_EVIDENCIA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "obtenido": {
+      "id": "S01",
+      "estado": "ACREDITADA",
+      "analisis": "COMPLETO",
+      "resumen": {
+        "TRANSFERENCIA": "MIXTA",
+        "ATENCION": "SIN_EVIDENCIA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "coincide": true,
+    "explicacion": "S_ENVIO, S_RECEPCION; la recepción posterior confirma el estado.",
+    "comprobaciones": {}
+  },
+  {
+    "id": "S02",
+    "esperado": {
+      "id": "S02",
+      "estado": "NO_ACREDITADA",
+      "analisis": "COMPLETO",
+      "resumen": {
+        "TRANSFERENCIA": "NEGATIVA",
+        "ATENCION": "POSITIVA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "obtenido": {
+      "id": "S02",
+      "estado": "NO_ACREDITADA",
+      "analisis": "COMPLETO",
+      "resumen": {
+        "TRANSFERENCIA": "NEGATIVA",
+        "ATENCION": "POSITIVA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "coincide": true,
+    "explicacion": "S_ATENCION y S_SIN_LLEGAR en cláusulas independientes.",
+    "comprobaciones": {}
+  },
+  {
+    "id": "S03",
+    "esperado": {
+      "id": "S03",
+      "estado": "REVERTIDA",
+      "analisis": "COMPLETO",
+      "resumen": {
+        "TRANSFERENCIA": "MIXTA",
+        "ATENCION": "SIN_EVIDENCIA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "obtenido": {
+      "id": "S03",
+      "estado": "REVERTIDA",
+      "analisis": "COMPLETO",
+      "resumen": {
+        "TRANSFERENCIA": "MIXTA",
+        "ATENCION": "SIN_EVIDENCIA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "coincide": true,
+    "explicacion": "S_DEVOLUCION reemplaza la no acreditación; no implica recepción.",
+    "comprobaciones": {}
+  },
+  {
+    "id": "S04",
+    "esperado": {
+      "id": "S04",
+      "estado": "NO_CONFIRMADA",
+      "analisis": "COMPLETO",
+      "resumen": {
+        "TRANSFERENCIA": "SIN_EVIDENCIA",
+        "ATENCION": "POSITIVA",
+        "CLARIDAD": "NEGATIVA"
+      }
+    },
+    "obtenido": {
+      "id": "S04",
+      "estado": "NO_CONFIRMADA",
+      "analisis": "COMPLETO",
+      "resumen": {
+        "TRANSFERENCIA": "SIN_EVIDENCIA",
+        "ATENCION": "POSITIVA",
+        "CLARIDAD": "NEGATIVA"
+      }
+    },
+    "coincide": true,
+    "explicacion": "Negación local S_CLARIDAD; S_OPINION independiente después de pero.",
+    "comprobaciones": {}
+  },
+  {
+    "id": "S05",
+    "esperado": {
+      "id": "S05",
+      "estado": "NO_ACREDITADA",
+      "analisis": "COMPLETO",
+      "resumen": {
+        "TRANSFERENCIA": "NEGATIVA",
+        "ATENCION": "SIN_EVIDENCIA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "obtenido": {
+      "id": "S05",
+      "estado": "NO_ACREDITADA",
+      "analisis": "COMPLETO",
+      "resumen": {
+        "TRANSFERENCIA": "NEGATIVA",
+        "ATENCION": "SIN_EVIDENCIA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "coincide": true,
+    "explicacion": "Corrección única de tranferencia; REF y MONTO protegidos.",
+    "comprobaciones": {
+      "no_referencias_cifras_y_montos_protegidos": true,
+      "correccion_unica": true
+    }
+  },
+  {
+    "id": "S06",
+    "esperado": {
+      "id": "S06",
+      "estado": "PENDIENTE",
+      "analisis": "COMPLETO",
+      "resumen": {
+        "TRANSFERENCIA": "SIN_EVIDENCIA",
+        "ATENCION": "SIN_EVIDENCIA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "obtenido": {
+      "id": "S06",
+      "estado": "PENDIENTE",
+      "analisis": "COMPLETO",
+      "resumen": {
+        "TRANSFERENCIA": "SIN_EVIDENCIA",
+        "ATENCION": "SIN_EVIDENCIA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "coincide": true,
+    "explicacion": "S_SEGUIMIENTO no crea opinión; S_CORTESIA no confirma recepción.",
+    "comprobaciones": {}
+  },
+  {
+    "id": "S07",
+    "esperado": {
+      "id": "S07",
+      "estado": "ACREDITADA",
+      "analisis": "PARCIAL",
+      "resumen": {
+        "TRANSFERENCIA": "MIXTA",
+        "ATENCION": "SIN_EVIDENCIA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "obtenido": {
+      "id": "S07",
+      "estado": "ACREDITADA",
+      "analisis": "PARCIAL",
+      "resumen": {
+        "TRANSFERENCIA": "MIXTA",
+        "ATENCION": "SIN_EVIDENCIA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "coincide": true,
+    "explicacion": "Rechaza el rol CAJERO y retoma el turno 3.",
+    "comprobaciones": {
+      "rechaza_rol_y_continua": true
+    }
+  },
+  {
+    "id": "S08",
+    "esperado": {
+      "id": "S08",
+      "estado": "NO_CONFIRMADA",
+      "analisis": "PARCIAL",
+      "resumen": {
+        "TRANSFERENCIA": "SIN_EVIDENCIA",
+        "ATENCION": "SIN_EVIDENCIA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "obtenido": {
+      "id": "S08",
+      "estado": "NO_CONFIRMADA",
+      "analisis": "PARCIAL",
+      "resumen": {
+        "TRANSFERENCIA": "SIN_EVIDENCIA",
+        "ATENCION": "SIN_EVIDENCIA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "coincide": true,
+    "explicacion": "Empate paga/pago: abstenerse y marcar NO_INTERPRETADOS.",
+    "comprobaciones": {
+      "empate_sin_correccion": true
+    }
+  },
+  {
+    "id": "S09",
+    "esperado": {
+      "id": "S09",
+      "estado": "NO_CONFIRMADA",
+      "analisis": "COMPLETO",
+      "resumen": {
+        "TRANSFERENCIA": "SIN_EVIDENCIA",
+        "ATENCION": "NEGATIVA",
+        "CLARIDAD": "POSITIVA"
+      }
+    },
+    "obtenido": {
+      "id": "S09",
+      "estado": "NO_CONFIRMADA",
+      "analisis": "COMPLETO",
+      "resumen": {
+        "TRANSFERENCIA": "SIN_EVIDENCIA",
+        "ATENCION": "NEGATIVA",
+        "CLARIDAD": "POSITIVA"
+      }
+    },
+    "coincide": true,
+    "explicacion": "Negación e intensidad conservadas; no atraviesan pero.",
+    "comprobaciones": {}
+  },
+  {
+    "id": "S10",
+    "esperado": {
+      "id": "S10",
+      "estado": "NO_CONFIRMADA",
+      "analisis": "COMPLETO",
+      "resumen": {
+        "TRANSFERENCIA": "POSITIVA",
+        "ATENCION": "SIN_EVIDENCIA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "obtenido": {
+      "id": "S10",
+      "estado": "NO_CONFIRMADA",
+      "analisis": "COMPLETO",
+      "resumen": {
+        "TRANSFERENCIA": "POSITIVA",
+        "ATENCION": "SIN_EVIDENCIA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "coincide": true,
+    "explicacion": "Regresion: debito no acredita; declaracion del AGENTE no confirma recepcion del CLIENTE.",
+    "comprobaciones": {
+      "regresion_Envié": true,
+      "regresion_Me debitaron": true
+    }
+  },
+  {
+    "id": "S11",
+    "esperado": {
+      "id": "S11",
+      "estado": "NO_ACREDITADA",
+      "analisis": "COMPLETO",
+      "resumen": {
+        "TRANSFERENCIA": "NEGATIVA",
+        "ATENCION": "SIN_EVIDENCIA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "obtenido": {
+      "id": "S11",
+      "estado": "NO_ACREDITADA",
+      "analisis": "COMPLETO",
+      "resumen": {
+        "TRANSFERENCIA": "NEGATIVA",
+        "ATENCION": "SIN_EVIDENCIA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "coincide": true,
+    "explicacion": "Declaración explícita del cliente prevalece sobre solicitudes/promesas posteriores.",
+    "comprobaciones": {
+      "referencia_repetida_unica": true
+    }
+  },
+  {
+    "id": "S12",
+    "esperado": {
+      "id": "S12",
+      "estado": "NO_CONFIRMADA",
+      "analisis": "PARCIAL",
+      "resumen": {
+        "TRANSFERENCIA": "POSITIVA",
+        "ATENCION": "SIN_EVIDENCIA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "obtenido": {
+      "id": "S12",
+      "estado": "NO_CONFIRMADA",
+      "analisis": "PARCIAL",
+      "resumen": {
+        "TRANSFERENCIA": "POSITIVA",
+        "ATENCION": "SIN_EVIDENCIA",
+        "CLARIDAD": "SIN_EVIDENCIA"
+      }
+    },
+    "coincide": true,
+    "explicacion": "Recuperación por cláusula: conserva la opinión válida.",
+    "comprobaciones": {
+      "fragmento_desconocido_sin_opinion_inventada": true
+    }
+  }
+]

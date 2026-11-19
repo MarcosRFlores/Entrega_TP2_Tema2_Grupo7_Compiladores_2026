@@ -1,0 +1,45 @@
+SESION S01
+1 CLIENTE: Envié G. 250000, pero no llegó.
+2 AGENTE: Registré el reclamo RC-204.
+3 CLIENTE: Ahora sí recibió el dinero.
+FIN
+SESION S02
+1 CLIENTE: Me atendiste muy bien, pero la transferencia sigue sin llegar.
+FIN
+SESION S03
+1 CLIENTE: TR-203 no llegó.
+2 CLIENTE: Ya me devolvieron el importe.
+FIN
+SESION S04
+1 CLIENTE: No entendí la explicación, pero el agente fue amable.
+FIN
+SESION S05
+1 CLIENTE: La tranferencia TR-204 de G. 250000 no llegó.
+FIN
+SESION S06
+1 AGENTE: Mañana revisaremos RC-206.
+2 CLIENTE: Gracias.
+FIN
+SESION S07
+1 CLIENTE: No llegó.
+2 CAJERO: Ya recibió.
+3 CLIENTE: Ya recibió.
+FIN
+SESION S08
+1 CLIENTE: pag.
+FIN
+SESION S09
+1 CLIENTE: La atención no fue muy buena, pero la explicación fue clara.
+FIN
+SESION S10
+1 CLIENTE: Me debitaron G. 250.000.
+2 AGENTE: Ya recibió el dinero.
+FIN
+SESION S11
+1 CLIENTE: No llegó.
+2 AGENTE: Solicitamos la reversión TR-203.
+3 AGENTE: Mañana revisaremos TR-203.
+FIN
+SESION S12
+1 CLIENTE: La transferencia fue buena, pero palabrasajenas.
+FIN

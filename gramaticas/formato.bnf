@@ -1,0 +1,6 @@
+<lote> ::= <sesion> <resto-sesiones>
+<resto-sesiones> ::= <sesion> <resto-sesiones> | ε
+<sesion> ::= SESION ID NL <turnos> FIN NL
+<turnos> ::= NUM <rol> DOSPUNTOS TEXTO NL <otros-turnos>
+<otros-turnos> ::= NUM <rol> DOSPUNTOS TEXTO NL <otros-turnos> | ε
+<rol> ::= CLIENTE | AGENTE

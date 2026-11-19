@@ -1,0 +1,1775 @@
+{
+  "fecha": "2026-11-11",
+  "cambio": "S_RECEPCION, S_DEVOLUCION y S_SIN_LLEGAR: validar sujeto y complemento antes de emitir valoración o evento monetario. Conservar la elipsis del dominio sin objetos incompatibles.",
+  "procedimiento": "Se capturó la salida de la implementación original antes de modificar analizador_semantico.py; se repitieron las mismas entradas después del cambio. Los hashes identifican las versiones y la salida completa de las doce sesiones. verificar.py conserva estas capturas y actualiza verificacion_actual.",
+  "antes": {
+    "sha256_analizador_semantico": "28aadfd9e371ab7e59aebaf99343f73e6a9925464744ba91d2d4ceffc0d839d1",
+    "controles_envio_debito": [
+      {
+        "entrada": "Envié G. 250000.",
+        "estado": "NO_CONFIRMADA",
+        "transferencia_cliente": "NEUTRA",
+        "coincide": true
+      },
+      {
+        "entrada": "Me debitaron G. 250000.",
+        "estado": "NO_CONFIRMADA",
+        "transferencia_cliente": "NEUTRA",
+        "coincide": true
+      }
+    ],
+    "casos_semanticos": [
+      {
+        "id": "R01",
+        "entrada": "SESION S01\n1 CLIENTE: El agente recibió el reclamo.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": false,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "El agente recibió el reclamo",
+            "inicio": 0,
+            "fin": 28,
+            "regla": "S_RECEPCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <sujeto> <contexto> <predicado>",
+              "<sujeto> ::= ARTICULO <nucleo>",
+              "<nucleo> ::= AGENTE",
+              "<contexto> ::= ε",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= ε",
+              "<cuerpo> ::= RECEPCION",
+              "<complementos> ::= <complemento> <complementos>",
+              "<complemento> ::= ARTICULO <objeto>",
+              "<objeto> ::= RECLAMO",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "POSITIVA",
+            "evento": "ACREDITADA",
+            "negada": false,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": []
+      },
+      {
+        "id": "R02",
+        "entrada": "SESION S01\n1 CLIENTE: Recibió la explicación.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": false,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "Recibió la explicación",
+            "inicio": 0,
+            "fin": 22,
+            "regla": "S_RECEPCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <predicado>",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= ε",
+              "<cuerpo> ::= RECEPCION",
+              "<complementos> ::= <complemento> <complementos>",
+              "<complemento> ::= ARTICULO <objeto>",
+              "<objeto> ::= CLARIDAD",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "POSITIVA",
+            "evento": "ACREDITADA",
+            "negada": false,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": []
+      },
+      {
+        "id": "R03",
+        "entrada": "SESION S01\n1 CLIENTE: Me devolvieron el reclamo.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "REVERTIDA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": false,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "Me devolvieron el reclamo",
+            "inicio": 0,
+            "fin": 25,
+            "regla": "S_DEVOLUCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <predicado>",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= PRONOMBRE <luego-pron>",
+              "<luego-pron> ::= ε",
+              "<cuerpo> ::= DEVOLUCION",
+              "<complementos> ::= <complemento> <complementos>",
+              "<complemento> ::= ARTICULO <objeto>",
+              "<objeto> ::= RECLAMO",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "POSITIVA",
+            "evento": "REVERTIDA",
+            "negada": false,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": []
+      },
+      {
+        "id": "R04",
+        "entrada": "SESION S01\n1 CLIENTE: No recibió el reclamo.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "NEGATIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": false,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "No recibió el reclamo",
+            "inicio": 0,
+            "fin": 21,
+            "regla": "S_RECEPCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <predicado>",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= NO <pron-opt>",
+              "<pron-opt> ::= ε",
+              "<cuerpo> ::= RECEPCION",
+              "<complementos> ::= <complemento> <complementos>",
+              "<complemento> ::= ARTICULO <objeto>",
+              "<objeto> ::= RECLAMO",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "NEGATIVA",
+            "evento": "NO_ACREDITADA",
+            "negada": true,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": []
+      },
+      {
+        "id": "R05",
+        "entrada": "SESION S01\n1 CLIENTE: La explicación llegó.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": false,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "La explicación llegó",
+            "inicio": 0,
+            "fin": 20,
+            "regla": "S_RECEPCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <sujeto> <contexto> <predicado>",
+              "<sujeto> ::= ARTICULO <nucleo>",
+              "<nucleo> ::= CLARIDAD",
+              "<contexto> ::= ε",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= ε",
+              "<cuerpo> ::= RECEPCION",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "POSITIVA",
+            "evento": "ACREDITADA",
+            "negada": false,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": []
+      },
+      {
+        "id": "R06",
+        "entrada": "SESION S01\n1 CLIENTE: La explicación sigue sin llegar.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "NEGATIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": false,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "La explicación sigue sin llegar",
+            "inicio": 0,
+            "fin": 31,
+            "regla": "S_SIN_LLEGAR",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <sujeto> <contexto> <predicado>",
+              "<sujeto> ::= ARTICULO <nucleo>",
+              "<nucleo> ::= CLARIDAD",
+              "<contexto> ::= ε",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= ε",
+              "<cuerpo> ::= CONTINUA SIN LLEGAR",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "NEGATIVA",
+            "evento": "NO_ACREDITADA",
+            "negada": false,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": []
+      },
+      {
+        "id": "R07",
+        "entrada": "SESION S01\n1 CLIENTE: RC-206 recibió el dinero.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": false,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "RC-206 recibió el dinero",
+            "inicio": 0,
+            "fin": 24,
+            "regla": "S_RECEPCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <sujeto> <contexto> <predicado>",
+              "<sujeto> ::= <nucleo>",
+              "<nucleo> ::= REF",
+              "<contexto> ::= ε",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= ε",
+              "<cuerpo> ::= RECEPCION",
+              "<complementos> ::= <complemento> <complementos>",
+              "<complemento> ::= ARTICULO <objeto>",
+              "<objeto> ::= OBJETO",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "POSITIVA",
+            "evento": "ACREDITADA",
+            "negada": false,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": []
+      },
+      {
+        "id": "R08",
+        "entrada": "SESION S01\n1 CLIENTE: Recibió RC-206.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": false,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "Recibió RC-206",
+            "inicio": 0,
+            "fin": 14,
+            "regla": "S_RECEPCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <predicado>",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= ε",
+              "<cuerpo> ::= RECEPCION",
+              "<complementos> ::= <complemento> <complementos>",
+              "<complemento> ::= REF",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "POSITIVA",
+            "evento": "ACREDITADA",
+            "negada": false,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": []
+      },
+      {
+        "id": "R09",
+        "entrada": "SESION S01\n1 CLIENTE: Me devolvieron.\nFIN",
+        "esperado": {
+          "estado": "REVERTIDA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "REVERTIDA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": true,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "Me devolvieron",
+            "inicio": 0,
+            "fin": 14,
+            "regla": "S_DEVOLUCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <predicado>",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= PRONOMBRE <luego-pron>",
+              "<luego-pron> ::= ε",
+              "<cuerpo> ::= DEVOLUCION",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "POSITIVA",
+            "evento": "REVERTIDA",
+            "negada": false,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": []
+      },
+      {
+        "id": "R10",
+        "entrada": "SESION S01\n1 CLIENTE: El destinatario recibió el dinero.\nFIN",
+        "esperado": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": true,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "El destinatario recibió el dinero",
+            "inicio": 0,
+            "fin": 33,
+            "regla": "S_RECEPCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <sujeto> <contexto> <predicado>",
+              "<sujeto> ::= ARTICULO <nucleo>",
+              "<nucleo> ::= DESTINATARIO",
+              "<contexto> ::= ε",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= ε",
+              "<cuerpo> ::= RECEPCION",
+              "<complementos> ::= <complemento> <complementos>",
+              "<complemento> ::= ARTICULO <objeto>",
+              "<objeto> ::= OBJETO",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "POSITIVA",
+            "evento": "ACREDITADA",
+            "negada": false,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": []
+      },
+      {
+        "id": "R11",
+        "entrada": "SESION S01\n1 CLIENTE: No me devolvieron el importe.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "NEGATIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "NEGATIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": true,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "No me devolvieron el importe",
+            "inicio": 0,
+            "fin": 28,
+            "regla": "S_DEVOLUCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <predicado>",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= NO <pron-opt>",
+              "<pron-opt> ::= PRONOMBRE",
+              "<cuerpo> ::= DEVOLUCION",
+              "<complementos> ::= <complemento> <complementos>",
+              "<complemento> ::= ARTICULO <objeto>",
+              "<objeto> ::= OBJETO",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "NEGATIVA",
+            "evento": null,
+            "negada": true,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": []
+      },
+      {
+        "id": "R12",
+        "entrada": "SESION S01\n1 CLIENTE: Recibió el dinero RC-206.\nFIN",
+        "esperado": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": true,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "Recibió el dinero RC-206",
+            "inicio": 0,
+            "fin": 24,
+            "regla": "S_RECEPCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <predicado>",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= ε",
+              "<cuerpo> ::= RECEPCION",
+              "<complementos> ::= <complemento> <complementos>",
+              "<complemento> ::= ARTICULO <objeto>",
+              "<objeto> ::= OBJETO",
+              "<complementos> ::= <complemento> <complementos>",
+              "<complemento> ::= REF",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "POSITIVA",
+            "evento": "ACREDITADA",
+            "negada": false,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": []
+      },
+      {
+        "id": "R13",
+        "entrada": "SESION S01\n1 CLIENTE: No llegó.\n2 CLIENTE: Recibió el reclamo.\nFIN",
+        "esperado": {
+          "estado": "NO_ACREDITADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "NEGATIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "MIXTA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": false,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "No llegó",
+            "inicio": 0,
+            "fin": 8,
+            "regla": "S_RECEPCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <predicado>",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= NO <pron-opt>",
+              "<pron-opt> ::= ε",
+              "<cuerpo> ::= RECEPCION",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "NEGATIVA",
+            "evento": "NO_ACREDITADA",
+            "negada": true,
+            "intensidad": "NORMAL"
+          },
+          {
+            "id": "S01:D2",
+            "turno": 2,
+            "actor": "CLIENTE",
+            "texto": "Recibió el reclamo",
+            "inicio": 0,
+            "fin": 18,
+            "regla": "S_RECEPCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <predicado>",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= ε",
+              "<cuerpo> ::= RECEPCION",
+              "<complementos> ::= <complemento> <complementos>",
+              "<complemento> ::= ARTICULO <objeto>",
+              "<objeto> ::= RECLAMO",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "POSITIVA",
+            "evento": "ACREDITADA",
+            "negada": false,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": []
+      },
+      {
+        "id": "R14",
+        "entrada": "SESION S01\n1 CLIENTE: Recibió la explicación, pero el agente fue amable.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "POSITIVA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "POSITIVA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": false,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "Recibió la explicación",
+            "inicio": 0,
+            "fin": 22,
+            "regla": "S_RECEPCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <predicado>",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= ε",
+              "<cuerpo> ::= RECEPCION",
+              "<complementos> ::= <complemento> <complementos>",
+              "<complemento> ::= ARTICULO <objeto>",
+              "<objeto> ::= CLARIDAD",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "POSITIVA",
+            "evento": "ACREDITADA",
+            "negada": false,
+            "intensidad": "NORMAL"
+          },
+          {
+            "id": "S01:D2",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "el agente fue amable",
+            "inicio": 29,
+            "fin": 49,
+            "regla": "S_OPINION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <sujeto> <contexto> <predicado>",
+              "<sujeto> ::= ARTICULO <nucleo>",
+              "<nucleo> ::= AGENTE",
+              "<contexto> ::= ε",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= ε",
+              "<cuerpo> ::= COPULA <juicio>",
+              "<juicio> ::= <polaridad>",
+              "<polaridad> ::= POSITIVO",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "ATENCION",
+            "valoracion": "POSITIVA",
+            "evento": null,
+            "negada": false,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": []
+      }
+    ],
+    "sha256_salida_corpus": "9c59e2228931897e5d1c0c45e4a5dfb4218379789afe4dd8517b8aa66ece2c76",
+    "coinciden": 4,
+    "total": 14
+  },
+  "despues": {
+    "sha256_analizador_semantico": "46cc79ff92993656d76bd1420a421bd2a7c28c6af45adcac54ee5d45e21165f7",
+    "controles_envio_debito": [
+      {
+        "entrada": "Envié G. 250000.",
+        "estado": "NO_CONFIRMADA",
+        "transferencia_cliente": "NEUTRA",
+        "coincide": true
+      },
+      {
+        "entrada": "Me debitaron G. 250000.",
+        "estado": "NO_CONFIRMADA",
+        "transferencia_cliente": "NEUTRA",
+        "coincide": true
+      }
+    ],
+    "casos_semanticos": [
+      {
+        "id": "R01",
+        "entrada": "SESION S01\n1 CLIENTE: El agente recibió el reclamo.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": true,
+        "evidencias": [],
+        "no_interpretados": [
+          {
+            "turno": 1,
+            "texto": "El agente recibió el reclamo",
+            "motivo": "La recepción, devolución o falta de llegada no tiene un contexto monetario compatible"
+          }
+        ]
+      },
+      {
+        "id": "R02",
+        "entrada": "SESION S01\n1 CLIENTE: Recibió la explicación.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": true,
+        "evidencias": [],
+        "no_interpretados": [
+          {
+            "turno": 1,
+            "texto": "Recibió la explicación",
+            "motivo": "La recepción, devolución o falta de llegada no tiene un contexto monetario compatible"
+          }
+        ]
+      },
+      {
+        "id": "R03",
+        "entrada": "SESION S01\n1 CLIENTE: Me devolvieron el reclamo.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": true,
+        "evidencias": [],
+        "no_interpretados": [
+          {
+            "turno": 1,
+            "texto": "Me devolvieron el reclamo",
+            "motivo": "La recepción, devolución o falta de llegada no tiene un contexto monetario compatible"
+          }
+        ]
+      },
+      {
+        "id": "R04",
+        "entrada": "SESION S01\n1 CLIENTE: No recibió el reclamo.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": true,
+        "evidencias": [],
+        "no_interpretados": [
+          {
+            "turno": 1,
+            "texto": "No recibió el reclamo",
+            "motivo": "La recepción, devolución o falta de llegada no tiene un contexto monetario compatible"
+          }
+        ]
+      },
+      {
+        "id": "R05",
+        "entrada": "SESION S01\n1 CLIENTE: La explicación llegó.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": true,
+        "evidencias": [],
+        "no_interpretados": [
+          {
+            "turno": 1,
+            "texto": "La explicación llegó",
+            "motivo": "La recepción, devolución o falta de llegada no tiene un contexto monetario compatible"
+          }
+        ]
+      },
+      {
+        "id": "R06",
+        "entrada": "SESION S01\n1 CLIENTE: La explicación sigue sin llegar.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": true,
+        "evidencias": [],
+        "no_interpretados": [
+          {
+            "turno": 1,
+            "texto": "La explicación sigue sin llegar",
+            "motivo": "La recepción, devolución o falta de llegada no tiene un contexto monetario compatible"
+          }
+        ]
+      },
+      {
+        "id": "R07",
+        "entrada": "SESION S01\n1 CLIENTE: RC-206 recibió el dinero.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": true,
+        "evidencias": [],
+        "no_interpretados": [
+          {
+            "turno": 1,
+            "texto": "RC-206 recibió el dinero",
+            "motivo": "La recepción, devolución o falta de llegada no tiene un contexto monetario compatible"
+          }
+        ]
+      },
+      {
+        "id": "R08",
+        "entrada": "SESION S01\n1 CLIENTE: Recibió RC-206.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": true,
+        "evidencias": [],
+        "no_interpretados": [
+          {
+            "turno": 1,
+            "texto": "Recibió RC-206",
+            "motivo": "La recepción, devolución o falta de llegada no tiene un contexto monetario compatible"
+          }
+        ]
+      },
+      {
+        "id": "R09",
+        "entrada": "SESION S01\n1 CLIENTE: Me devolvieron.\nFIN",
+        "esperado": {
+          "estado": "REVERTIDA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "REVERTIDA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": true,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "Me devolvieron",
+            "inicio": 0,
+            "fin": 14,
+            "regla": "S_DEVOLUCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <predicado>",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= PRONOMBRE <luego-pron>",
+              "<luego-pron> ::= ε",
+              "<cuerpo> ::= DEVOLUCION",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "POSITIVA",
+            "evento": "REVERTIDA",
+            "negada": false,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": []
+      },
+      {
+        "id": "R10",
+        "entrada": "SESION S01\n1 CLIENTE: El destinatario recibió el dinero.\nFIN",
+        "esperado": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": true,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "El destinatario recibió el dinero",
+            "inicio": 0,
+            "fin": 33,
+            "regla": "S_RECEPCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <sujeto> <contexto> <predicado>",
+              "<sujeto> ::= ARTICULO <nucleo>",
+              "<nucleo> ::= DESTINATARIO",
+              "<contexto> ::= ε",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= ε",
+              "<cuerpo> ::= RECEPCION",
+              "<complementos> ::= <complemento> <complementos>",
+              "<complemento> ::= ARTICULO <objeto>",
+              "<objeto> ::= OBJETO",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "POSITIVA",
+            "evento": "ACREDITADA",
+            "negada": false,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": []
+      },
+      {
+        "id": "R11",
+        "entrada": "SESION S01\n1 CLIENTE: No me devolvieron el importe.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "NEGATIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "NEGATIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": true,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "No me devolvieron el importe",
+            "inicio": 0,
+            "fin": 28,
+            "regla": "S_DEVOLUCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <predicado>",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= NO <pron-opt>",
+              "<pron-opt> ::= PRONOMBRE",
+              "<cuerpo> ::= DEVOLUCION",
+              "<complementos> ::= <complemento> <complementos>",
+              "<complemento> ::= ARTICULO <objeto>",
+              "<objeto> ::= OBJETO",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "NEGATIVA",
+            "evento": null,
+            "negada": true,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": []
+      },
+      {
+        "id": "R12",
+        "entrada": "SESION S01\n1 CLIENTE: Recibió el dinero RC-206.\nFIN",
+        "esperado": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": true,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "Recibió el dinero RC-206",
+            "inicio": 0,
+            "fin": 24,
+            "regla": "S_RECEPCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <predicado>",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= ε",
+              "<cuerpo> ::= RECEPCION",
+              "<complementos> ::= <complemento> <complementos>",
+              "<complemento> ::= ARTICULO <objeto>",
+              "<objeto> ::= OBJETO",
+              "<complementos> ::= <complemento> <complementos>",
+              "<complemento> ::= REF",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "POSITIVA",
+            "evento": "ACREDITADA",
+            "negada": false,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": []
+      },
+      {
+        "id": "R13",
+        "entrada": "SESION S01\n1 CLIENTE: No llegó.\n2 CLIENTE: Recibió el reclamo.\nFIN",
+        "esperado": {
+          "estado": "NO_ACREDITADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "NEGATIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_ACREDITADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "NEGATIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": true,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "No llegó",
+            "inicio": 0,
+            "fin": 8,
+            "regla": "S_RECEPCION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <predicado>",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= NO <pron-opt>",
+              "<pron-opt> ::= ε",
+              "<cuerpo> ::= RECEPCION",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "TRANSFERENCIA",
+            "valoracion": "NEGATIVA",
+            "evento": "NO_ACREDITADA",
+            "negada": true,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": [
+          {
+            "turno": 2,
+            "texto": "Recibió el reclamo",
+            "motivo": "La recepción, devolución o falta de llegada no tiene un contexto monetario compatible"
+          }
+        ]
+      },
+      {
+        "id": "R14",
+        "entrada": "SESION S01\n1 CLIENTE: Recibió la explicación, pero el agente fue amable.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "POSITIVA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "POSITIVA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "coincide": true,
+        "evidencias": [
+          {
+            "id": "S01:D1",
+            "turno": 1,
+            "actor": "CLIENTE",
+            "texto": "el agente fue amable",
+            "inicio": 29,
+            "fin": 49,
+            "regla": "S_OPINION",
+            "producciones_sintacticas": [
+              "<clausula> ::= <contexto> <inicio>",
+              "<contexto> ::= ε",
+              "<inicio> ::= <sujeto> <contexto> <predicado>",
+              "<sujeto> ::= ARTICULO <nucleo>",
+              "<nucleo> ::= AGENTE",
+              "<contexto> ::= ε",
+              "<predicado> ::= <prefijo> <cuerpo> <complementos>",
+              "<prefijo> ::= ε",
+              "<cuerpo> ::= COPULA <juicio>",
+              "<juicio> ::= <polaridad>",
+              "<polaridad> ::= POSITIVO",
+              "<complementos> ::= ε"
+            ],
+            "aspecto": "ATENCION",
+            "valoracion": "POSITIVA",
+            "evento": null,
+            "negada": false,
+            "intensidad": "NORMAL"
+          }
+        ],
+        "no_interpretados": [
+          {
+            "turno": 1,
+            "texto": "Recibió la explicación",
+            "motivo": "La recepción, devolución o falta de llegada no tiene un contexto monetario compatible"
+          }
+        ]
+      }
+    ],
+    "sha256_salida_corpus": "9c59e2228931897e5d1c0c45e4a5dfb4218379789afe4dd8517b8aa66ece2c76",
+    "coinciden": 14,
+    "total": 14
+  },
+  "verificacion_actual": {
+    "sha256_analizador_semantico": "46cc79ff92993656d76bd1420a421bd2a7c28c6af45adcac54ee5d45e21165f7",
+    "corpus_original_sin_cambios": true,
+    "casos_semanticos": [
+      {
+        "id": "R01",
+        "entrada": "SESION S01\n1 CLIENTE: El agente recibió el reclamo.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "sintaxis_valida": true,
+        "rechazo_semantico": true,
+        "coincide": true
+      },
+      {
+        "id": "R02",
+        "entrada": "SESION S01\n1 CLIENTE: Recibió la explicación.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "sintaxis_valida": true,
+        "rechazo_semantico": true,
+        "coincide": true
+      },
+      {
+        "id": "R03",
+        "entrada": "SESION S01\n1 CLIENTE: Me devolvieron el reclamo.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "sintaxis_valida": true,
+        "rechazo_semantico": true,
+        "coincide": true
+      },
+      {
+        "id": "R04",
+        "entrada": "SESION S01\n1 CLIENTE: No recibió el reclamo.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "sintaxis_valida": true,
+        "rechazo_semantico": true,
+        "coincide": true
+      },
+      {
+        "id": "R05",
+        "entrada": "SESION S01\n1 CLIENTE: La explicación llegó.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "sintaxis_valida": true,
+        "rechazo_semantico": true,
+        "coincide": true
+      },
+      {
+        "id": "R06",
+        "entrada": "SESION S01\n1 CLIENTE: La explicación sigue sin llegar.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "sintaxis_valida": true,
+        "rechazo_semantico": true,
+        "coincide": true
+      },
+      {
+        "id": "R07",
+        "entrada": "SESION S01\n1 CLIENTE: RC-206 recibió el dinero.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "sintaxis_valida": true,
+        "rechazo_semantico": true,
+        "coincide": true
+      },
+      {
+        "id": "R08",
+        "entrada": "SESION S01\n1 CLIENTE: Recibió RC-206.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "sintaxis_valida": true,
+        "rechazo_semantico": true,
+        "coincide": true
+      },
+      {
+        "id": "R09",
+        "entrada": "SESION S01\n1 CLIENTE: Me devolvieron.\nFIN",
+        "esperado": {
+          "estado": "REVERTIDA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "REVERTIDA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "sintaxis_valida": true,
+        "rechazo_semantico": true,
+        "coincide": true
+      },
+      {
+        "id": "R10",
+        "entrada": "SESION S01\n1 CLIENTE: El destinatario recibió el dinero.\nFIN",
+        "esperado": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "sintaxis_valida": true,
+        "rechazo_semantico": true,
+        "coincide": true
+      },
+      {
+        "id": "R11",
+        "entrada": "SESION S01\n1 CLIENTE: No me devolvieron el importe.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "NEGATIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "NEGATIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "sintaxis_valida": true,
+        "rechazo_semantico": true,
+        "coincide": true
+      },
+      {
+        "id": "R12",
+        "entrada": "SESION S01\n1 CLIENTE: Recibió el dinero RC-206.\nFIN",
+        "esperado": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "ACREDITADA",
+          "analisis": "COMPLETO",
+          "resumen": {
+            "TRANSFERENCIA": "POSITIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "sintaxis_valida": true,
+        "rechazo_semantico": true,
+        "coincide": true
+      },
+      {
+        "id": "R13",
+        "entrada": "SESION S01\n1 CLIENTE: No llegó.\n2 CLIENTE: Recibió el reclamo.\nFIN",
+        "esperado": {
+          "estado": "NO_ACREDITADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "NEGATIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_ACREDITADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "NEGATIVA",
+            "ATENCION": "SIN_EVIDENCIA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "sintaxis_valida": true,
+        "rechazo_semantico": true,
+        "coincide": true
+      },
+      {
+        "id": "R14",
+        "entrada": "SESION S01\n1 CLIENTE: Recibió la explicación, pero el agente fue amable.\nFIN",
+        "esperado": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "POSITIVA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "obtenido": {
+          "estado": "NO_CONFIRMADA",
+          "analisis": "PARCIAL",
+          "resumen": {
+            "TRANSFERENCIA": "SIN_EVIDENCIA",
+            "ATENCION": "POSITIVA",
+            "CLARIDAD": "SIN_EVIDENCIA"
+          }
+        },
+        "sintaxis_valida": true,
+        "rechazo_semantico": true,
+        "coincide": true
+      }
+    ],
+    "criterio_corpus": "Contrato 2.0 completo; se excluyen tabla_lexica, tabla_lexica_operaciones y cambio de versión",
+    "coinciden": 14,
+    "total": 14
+  }
+}

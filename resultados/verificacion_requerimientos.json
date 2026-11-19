@@ -1,0 +1,276 @@
+[
+  {
+    "prueba": "JSON precargado conocido",
+    "esperado": "TRANSFERENCIA",
+    "obtenido": "TRANSFERENCIA",
+    "coincide": true
+  },
+  {
+    "prueba": "Aprender referencia, monto y cifra por patrones",
+    "esperado": [
+      "REF",
+      "MONTO",
+      "CIFRA"
+    ],
+    "obtenido": [
+      "REF",
+      "MONTO",
+      "CIFRA"
+    ],
+    "coincide": true
+  },
+  {
+    "prueba": "Insertar lexemas reconocidos",
+    "esperado": [
+      "REF",
+      "MONTO",
+      "CIFRA"
+    ],
+    "obtenido": [
+      "REF",
+      "MONTO",
+      "CIFRA"
+    ],
+    "coincide": true
+  },
+  {
+    "prueba": "Consulta única y aprendizaje entre turnos y sesiones",
+    "esperado": [
+      "gestionaremos"
+    ],
+    "obtenido": [],
+    "coincide": true
+  },
+  {
+    "prueba": "Clasificación interactiva y parser",
+    "esperado": [
+      "PENDIENTE",
+      "PENDIENTE"
+    ],
+    "obtenido": [
+      "PENDIENTE",
+      "PENDIENTE"
+    ],
+    "coincide": true
+  },
+  {
+    "prueba": "Aprendizaje visible en salida",
+    "esperado": "SEGUIMIENTO",
+    "obtenido": "SEGUIMIENTO",
+    "coincide": true
+  },
+  {
+    "prueba": "Consulta y registro de nuevo lexema trazables",
+    "esperado": [
+      "BUSCAR",
+      "CONSULTAR_USUARIO",
+      "INSERTAR"
+    ],
+    "obtenido": [
+      "BUSCAR",
+      "CONSULTAR_USUARIO",
+      "INSERTAR"
+    ],
+    "coincide": true
+  },
+  {
+    "prueba": "Levenshtein incluye palabras aprendidas",
+    "esperado": [
+      "SEGUIMIENTO",
+      "gestionaremos"
+    ],
+    "obtenido": [
+      "SEGUIMIENTO",
+      "gestionaremos"
+    ],
+    "coincide": true
+  },
+  {
+    "prueba": "Diccionario canónico independiente",
+    "esperado": false,
+    "obtenido": false,
+    "coincide": true
+  },
+  {
+    "prueba": "Aprendizaje limitado al lote; abstención sin consulta",
+    "esperado": [
+      "PARCIAL",
+      "NO_CONFIRMADA"
+    ],
+    "obtenido": [
+      "PARCIAL",
+      "NO_CONFIRMADA"
+    ],
+    "coincide": true
+  },
+  {
+    "prueba": "No consultar empate ni entidades protegidas",
+    "esperado": [],
+    "obtenido": [],
+    "coincide": true
+  },
+  {
+    "prueba": "Empate obligatorio sin reclasificación",
+    "esperado": [
+      "pag",
+      "DESCONOCIDA",
+      "EMPATE"
+    ],
+    "obtenido": [
+      "pag",
+      "DESCONOCIDA",
+      "EMPATE"
+    ],
+    "coincide": true
+  },
+  {
+    "prueba": "NO protegido",
+    "esperado": [
+      "NO",
+      "no"
+    ],
+    "obtenido": [
+      "NO",
+      "no"
+    ],
+    "coincide": true
+  },
+  {
+    "prueba": "Reconsulta tras corrección única",
+    "esperado": [
+      "tranferencia",
+      "transferencia"
+    ],
+    "obtenido": [
+      "tranferencia",
+      "transferencia"
+    ],
+    "coincide": true
+  },
+  {
+    "prueba": "Texto y posición originales conservados",
+    "esperado": [
+      "tranferencia",
+      0,
+      12,
+      "TRANSFERENCIA"
+    ],
+    "obtenido": [
+      "tranferencia",
+      0,
+      12,
+      "TRANSFERENCIA"
+    ],
+    "coincide": true
+  },
+  {
+    "prueba": "Límite AFD TR-123",
+    "esperado": true,
+    "obtenido": true,
+    "coincide": true
+  },
+  {
+    "prueba": "Límite AFD RC-123456",
+    "esperado": true,
+    "obtenido": true,
+    "coincide": true
+  },
+  {
+    "prueba": "Límite AFD TR-12",
+    "esperado": false,
+    "obtenido": false,
+    "coincide": true
+  },
+  {
+    "prueba": "Límite AFD RC-1234567",
+    "esperado": false,
+    "obtenido": false,
+    "coincide": true
+  },
+  {
+    "prueba": "Usuario se abstiene; no se inventa opinión",
+    "esperado": [
+      "PARCIAL",
+      "SIN_EVIDENCIA"
+    ],
+    "obtenido": [
+      "PARCIAL",
+      "SIN_EVIDENCIA"
+    ],
+    "coincide": true
+  },
+  {
+    "prueba": "Rechazar orden inconsistente y continuar siguiente línea y sesión",
+    "esperado": [
+      [
+        1,
+        4
+      ],
+      "REVERTIDA",
+      "S02"
+    ],
+    "obtenido": [
+      [
+        1,
+        4
+      ],
+      "REVERTIDA",
+      "S02"
+    ],
+    "coincide": true
+  },
+  {
+    "prueba": "JSON inicial sin sobrescritura",
+    "esperado": true,
+    "obtenido": true,
+    "coincide": true
+  },
+  {
+    "prueba": "BNF de cláusula coherente con la de texto",
+    "esperado": true,
+    "obtenido": true,
+    "coincide": true
+  },
+  {
+    "prueba": "CLI interacción, validación de categoría y consulta única",
+    "esperado": [
+      0,
+      1,
+      true,
+      "PENDIENTE"
+    ],
+    "obtenido": [
+      0,
+      1,
+      true,
+      "PENDIENTE"
+    ],
+    "coincide": true
+  },
+  {
+    "prueba": "CLI reproducible sin preguntas",
+    "esperado": [
+      0,
+      false,
+      "PARCIAL"
+    ],
+    "obtenido": [
+      0,
+      false,
+      "PARCIAL"
+    ],
+    "coincide": true
+  },
+  {
+    "prueba": "CLI EOF conserva desconocidos y termina",
+    "esperado": [
+      0,
+      "NO_CONFIRMADA"
+    ],
+    "obtenido": [
+      0,
+      "NO_CONFIRMADA"
+    ],
+    "coincide": true
+  }
+]

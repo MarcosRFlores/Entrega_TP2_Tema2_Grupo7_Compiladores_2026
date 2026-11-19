@@ -1,0 +1,2 @@
+<linea> ::= SESION ID | NUM <rol> DOSPUNTOS TEXTO | FIN
+<rol> ::= CLIENTE | AGENTE
